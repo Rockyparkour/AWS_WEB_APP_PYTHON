@@ -28,7 +28,7 @@ else:
     app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_uri']
 
 db = SQLAlchemy(app)
-
+  
 
 class Contacts(db.Model):
     serial_no = db.Column(db.Integer, primary_key=True)
