@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename ='img/home-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Admin panel </h1>
+            <span class="subheading">Manage your posts here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-16 col-md-10 mx-auto">
+    {% set index ='1' %}
+<form name="createNewblog" id="modifyForm" action="/edit/0" method='post' >
+
+<input type="hidden" id="index" name="index" value="{{ index }}">
+<td><button class="btn btn-primary" name="tag1"> Add New Blog </button> </td>
+</form>
+<br>
+<div right:100px>
+<form name="createNewblog" id="modifyForm" action="/login" method='post' >
+<td><button class="btn btn-primary"> Log Out </button></td>
+</form></div>
+        <! -- TO DO : fetch it through database--->
+<p><h1>All Posts</h1></p>
+  <table class="table table-striped"id="myTable">
+    <thead>
+      <tr>
+        <th>Serial No.</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+  {% for post in posts %}
+        <tr>
+        <td>{{post.serial_no}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.date}}</td>
+
+{% set index ='2' %}
+        <form name="editblog" id="modifyForm" action="/editdelete/{{post.serial_no}}" method='post' >
+<input type="hidden" id="index" name="index" value="{{ index }}">
+        <td><button class="btn btn-primary">Edit</button> </td>
+
+      </form> 
+
+    {% set index ='3' %}
+      <form name="deleteblog" id="modifyForm" action="/delete/{{post.serial_no}}" method='post' >
+
+<input type="hidden" id="index" name="index" value="{{ index }}">
+        <td><button class="btn btn-primary"> Delete </button> </td>
+      </form>
+      </tr>
+
+  {% endfor %}
+    </tbody>
+  </table>
+
+
+        <!-- Pager -->
+
+      </div>
+    </div>
+  </div>
+
+
+
+  {% endblock %}

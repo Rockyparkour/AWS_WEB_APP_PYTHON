@@ -1,0 +1,27 @@
+{
+	"params":
+	{
+		"local_server":"True",
+
+		"local_uri": "mysql://root:@localhost/top_coder",
+
+		"prod_uri":"mysql://root:@localhost/top_coder",
+
+		"fb_url":"https://facebook.com/rakeshparkour",
+
+		"twitter_url":"https://twitter.com/rakeshparkour",
+		"git_url":"https://github.com/rakeshparkour",
+		"blog_name":"Top Coder Blog",
+		"tagline":"A Blog for Programmer for world",
+		"gmail-user":"iotnpython@gmail.com",
+		"gmail-password":"python@HALO123",
+		"about_text":"HI my name is Rakesh ,I created this blog and I am a Good boy",
+		"login_img":"login.svg",
+		"no_of_posts": 11,
+		"admin_user":"Admin",
+		"admin_password":"password"
+
+
+
+	}
+}

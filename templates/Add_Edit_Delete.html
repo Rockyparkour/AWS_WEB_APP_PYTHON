@@ -1,0 +1,80 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+ <!-- Page Header -->
+ <header class="masthead" style="background-image: url('{{ url_for('static', filename ='img/contact-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>{{action_name}}</h1>
+            <span class="subheading">Be free to Blog</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+        <form class="form-horizontal" action= "/create"  method="post" novalidate="True">
+            <fieldset>
+                        <h3 class="text-left header">{{action_name}}<h3>
+
+
+
+                        <div class="control-group" >
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-8">
+                                <input id="title" name="title" type="text" placeholder="Enter Title of the Blog" class="form-control">
+                            </div>
+                        </div>
+
+
+
+                        <div class="control-group" >
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-8">
+                                <input id="tag_line" name="tag_line" type="text" placeholder="tag the Blog" class="form-control">
+                            </div>
+                        </div>
+
+
+
+                        <div class="control-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-5">
+                                <input id="slug" name="slug" type="text" placeholder="Slug Here" class="form-control">
+                            </div>
+                        </div>
+
+
+
+                        <div class="control-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-7">
+                                <input id="img_file" name="img_file" type="file"  position: relative placeholder="Select Image" class="form-control">
+                              
+                            </div>
+                        </div>
+
+
+
+                        <div class="control-group">
+                            <span class="col-md-1 col-md-offset-4 text-center"></span>
+                            <div class="col-md-6">
+                                <textarea class="form-control" id="content"  name="content" placeholder="Enter your blog contents here." rows="7"></textarea>
+                            </div>
+                        </div>
+
+
+
+                        <div class="control-group">
+                            <br>
+                            <div class="col-md-16 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+{% endblock %}
